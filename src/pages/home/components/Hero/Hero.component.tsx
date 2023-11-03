@@ -33,7 +33,7 @@ export const Hero = (props: THeroProps) => {
         <Stack
           position="relative"
           maxW={'5xl'}
-          height="80dvh"
+          height="80vh"
           margin="0 auto"
           textAlign={'center'}
           justifySelf="center"
@@ -83,16 +83,17 @@ export const Hero = (props: THeroProps) => {
                   Get Started {callToActionTitle}
               </Button>
                 </Link>
-              <Link href='#contact-us' variant={'link'} color="blue.400" colorScheme={'gray'} size={'sm'}>
+              <Link href='#contact-us' variant={'link'} color="blue.700" colorScheme={'gray'} size={'lg'}>
                 Contact Us {ghostButtonTitle}
               </Link>
             </Stack>
           </Stack>
-          <Box maxW={500} position={'absolute'}
+          <Box 
+            maxW={{md: 500}}
+            position={'absolute'}
             bottom={0}
             opacity={0.2}
             zIndex={0}
-
           >
             <Lottie
               play
