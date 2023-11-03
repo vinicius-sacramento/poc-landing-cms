@@ -4,10 +4,10 @@ import { Contact, Hero, Services } from "./components"
 export const Home = () => {
   return (
     <>
-      <Hero/>
-      <Services/>
+      <Hero />
+      <Services />
       <Contact />
-      <Footer/>
+      <Footer />
     </>
   )
 }

@@ -1,13 +1,15 @@
 import {
   Box,
   Container,
+  Fade,
   Stack,
   Text,
   useColorModeValue,
 } from '@chakra-ui/react'
 
-export const Footer = () =>  {
+export const Footer = () => {
   return (
+    <Fade in={true} transition={{ enter: { duration: 0.8 } }}>
     <Box
       bg={useColorModeValue('gray.50', 'gray.900')}
       color={useColorModeValue('gray.700', 'gray.200')}>
@@ -22,5 +24,6 @@ export const Footer = () =>  {
         <Text>© 2022 Sacrax IT. All rights reserved</Text>
       </Container>
     </Box>
+    </Fade>
   )
 }
