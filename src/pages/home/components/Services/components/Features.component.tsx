@@ -6,6 +6,7 @@ import {
   Text,
   SimpleGrid,
   Flex,
+  Link,
   // Link,
 } from '@chakra-ui/react';
 
@@ -120,9 +121,9 @@ export const Features = () => {
             <Text fontSize="md" mt={4}>
               {feature.content}
             </Text>
-            {/* <Link href="#" mt={4} fontSize="sm" colorScheme='blue' color={"blue.400"}>
+            <Link href="#contact-us" mt={4} fontSize="sm" colorScheme='blue' color={"blue.400"}>
               Learn more →
-            </Link> */}
+            </Link>
           </Box>
         ))}
       </SimpleGrid>

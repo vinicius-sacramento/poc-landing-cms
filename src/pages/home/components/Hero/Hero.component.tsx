@@ -1,14 +1,12 @@
 import {
   Box,
   Heading,
-  Container,
   Text,
   Button,
   Stack,
-  // Link,
+  Fade,
+  Link,
 } from '@chakra-ui/react'
-// import { SectionAnimation } from '../../../../components/SectionAnimation'
-import { motion } from 'framer-motion'
 
 type THeroProps = {
   title?: string,
@@ -24,28 +22,25 @@ export const Hero = (props: THeroProps) => {
     subtitle,
     description,
     callToActionTitle,
-    // ghostButtonTitle,
-
+    ghostButtonTitle,
   } = props;
 
   return (
     <>
-     <motion.div
-      style={{opacity: 0}}
-      animate={{opacity: 1,}}
-      transition={{duration: 0.7}}
-    >
-      <Container maxW={'5xl'} height={"101dvh"}>
+      <Fade in={true} transition={{enter:{ duration: 0.8}}}>
         <Stack
-          as={Box}
-          height={"full"}
+          maxW={'5xl'} 
+          height="80dvh"
+          margin="0 auto"
           textAlign={'center'}
+          justifySelf="center"
           display={'flex'}
           justifyContent={'center'}
           alignItems={"center"}
+          as={Box}
           spacing={{ base: 8, md: 14 }}
           p={{ base: 10 }}
-          >
+        >
           <Heading
             fontWeight={600}
             fontSize={{ base: '2xl', sm: '4xl', md: '6xl' }}
@@ -80,18 +75,17 @@ export const Hero = (props: THeroProps) => {
               _hover={{
                 bg: 'red.400',
               }}>
-              <a href='#features'>
+              <a href='#services'>
                 Get Started {callToActionTitle}
               </a>
             </Button>
-            {/* <Link href='#teste' variant={'link'} colorScheme={'blue'} size={'sm'}
+            <Link href='#contact-us' variant={'link'} color="blue.400" colorScheme={'gray'} size={'sm'}
             >
-              Learn more {ghostButtonTitle}
-            </Link> */}
+              Contact Us {ghostButtonTitle}
+            </Link>
           </Stack>
         </Stack>
-      </Container>
-    </motion.div>
+      </Fade>
     </>
   )
 }

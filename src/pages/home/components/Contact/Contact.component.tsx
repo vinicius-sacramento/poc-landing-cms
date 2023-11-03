@@ -12,35 +12,38 @@ import {
   InputLeftElement,
   Stack,
 } from '@chakra-ui/react'
-import { motion, useInView } from 'framer-motion'
-import { useRef } from 'react'
+
+import Lottie from 'react-lottie-player/dist/LottiePlayerLight'
+import { contactUsLottie } from '../../../../assets/lottie/contact-us'
 
 export const Contact = () => {
-  const ref = useRef(null)
-  const isInView = useInView(ref, {once: true})
   return (
-    <motion.div
-      style={{ opacity: 0, y: 0, display: 'block', translate: "0px -200px" }}
-      animate={{ opacity: 1, y: isInView ? -400 : 0 }}
-      transition={{ duration: 0.7 }}
-    >
       <Flex 
-        id="contact"
+        id="contact-us"
         maxWidth="full"
         justifyContent="center" 
         mt={0} 
         p={{ sm: 4, md: 8, lg: 12 }}
-        bgGradient="
-        linear(to-br, blue.600, red.600)
-        
-        
-        "
+        bgGradient="linear(to-br, blue.600, red.600)"
       >
+       <Box 
+        position={"absolute"}
+        opacity={0.3}
+        maxWidth={800}
+       >
+        <Lottie
+          animationData={contactUsLottie}
+          loop
+          play
+        />
+      </Box>
+
         <Box
           color="white"
           borderRadius="lg"
           marginY={{ sm: 4, md: 16, lg: 10 }}
           p={{ base: 10, sm: 10, md: 10 }}
+          zIndex={1}
         >
             <Stack pb={8} alignItems="center">
               <Heading>Contact Us</Heading>
@@ -68,7 +71,7 @@ export const Contact = () => {
                     </InputGroup>
                   </FormControl>
                   <FormControl float="right">
-                    <Button variant="solid" size="lg" rounded="2xl" bg="red.300" colorScheme='red' _hover={{ bg: "red.400" }}>
+                    <Button variant="solid" size="lg" width="full" rounded="2xl" bg="red.300" colorScheme='red' _hover={{ bg: "red.400" }}>
                       Send Message
                     </Button>
                   </FormControl>
@@ -77,6 +80,5 @@ export const Contact = () => {
             </Box>
           </Box>
       </Flex>
-    </motion.div>
   )
 }
