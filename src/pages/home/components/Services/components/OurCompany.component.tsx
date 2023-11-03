@@ -7,12 +7,12 @@ import {
   Text,
   Stack,
   StackDivider,
-  // Icon,
   useColorModeValue,
   Button,
 } from '@chakra-ui/react'
-// import { IoAnalyticsSharp, IoLogoBitcoin, IoSearchSharp } from 'react-icons/io5'
+import { Building2, FilePieChart, Mail, TrendingUp } from 'lucide-react'
 import { ReactElement } from 'react'
+import Team from '../../../../../assets/jpeg/team.jpeg'
 
 interface FeatureProps {
   text: string
@@ -36,43 +36,55 @@ export const OurCompany = () => {
     <Container maxW="full" p={0} py={12}>
       <SimpleGrid columns={{ base: 1, md: 2 }} spacing={10} paddingX={0}>
         <Stack spacing={4} paddingX={0}>
-          <Heading>A digital Product design agency</Heading>
-          <Text color={'gray.500'} fontSize={'lg'}>
+          <Heading
+            textAlign={{ base: "center", md: "start" }}
+          >A digital Product design agency</Heading>
+          <Text
+            textAlign={{ base: "center", md: "start" }}
+            color={'gray.500'}
+            fontSize={'lg'}
+          >
             Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
             eirmod tempor invidunt ut labore
           </Text>
           <Stack
             spacing={4}
+            alignItems={{ base: "center", md: "start" }}
             divider={
               <StackDivider borderColor={useColorModeValue('gray.100', 'gray.700')} />
             }>
             <Feature
-              // icon={<Icon as={IoAnalyticsSharp} color={'yellow.500'} w={5} h={5} />}
+              icon={<Building2 color='#D69E2E' size="18" />}
               iconBg={useColorModeValue('yellow.100', 'yellow.900')}
               text={'Business Planning'}
             />
             <Feature
-              // icon={<Icon as={IoLogoBitcoin} color={'green.500'} w={5} h={5} />}
+              icon={<TrendingUp color='#38A169' size='18' />}
               iconBg={useColorModeValue('green.100', 'green.900')}
               text={'Financial Planning'}
             />
             <Feature
-              // icon={<Icon as={IoSearchSharp} color={'purple.500'} w={5} h={5} />}
+              icon={<FilePieChart color='#805AD5' size="18" />}
               iconBg={useColorModeValue('purple.100', 'purple.900')}
               text={'Market Analysis'}
             />
-            <Button size="lg" rounded="2xl" maxW={"200px"}
-              colorScheme='blue'
+            <Button
+              size="lg"
+              width={{ base: "full", sm: "full" }}
+              rounded="2xl"
+              colorScheme='red'
               _hover={{
-                // color: "#000",
                 bg: "red.400"
-                // bgGradient: "linear(to-br, blue.500, red.500)"
               }}
-              // bgGradient="linear(to-br, blue.400, red.400)"
               bg="red.300"
             >
-              <a href='#contact'>
-              Call To Action
+              <a href='#contact-us'>
+                <Flex align="center">
+                  <Mail size={18} />
+                  <Text m="2">
+                    Contact Us
+                  </Text>
+                </Flex>
               </a>
             </Button>
           </Stack>
@@ -81,9 +93,7 @@ export const OurCompany = () => {
           <Image
             rounded={'2xl'}
             alt={'feature image'}
-            src={
-              'https://images.unsplash.com/photo-1554200876-56c2f25224fa?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80'
-            }
+            src={Team}
             objectFit={'cover'}
           />
         </Flex>
