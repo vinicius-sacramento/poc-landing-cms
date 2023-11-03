@@ -122,7 +122,7 @@ export const Features = () => {
               {feature.content}
             </Text>
             <Link href="#contact-us" mt={4} fontSize="sm" colorScheme='blue' color={"blue.400"}>
-              Learn more →
+              Contact Us →
             </Link>
           </Box>
         ))}

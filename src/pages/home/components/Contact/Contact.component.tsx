@@ -28,7 +28,7 @@ export const Contact = () => {
       >
        <Box 
         position={"absolute"}
-        opacity={0.3}
+        opacity={0.2}
         maxWidth={800}
        >
         <Lottie
@@ -47,7 +47,7 @@ export const Contact = () => {
         >
             <Stack pb={8} alignItems="center">
               <Heading>Contact Us</Heading>
-              <Text mt={{ sm: 3, md: 3, lg: 5 }} color="gray.200">
+              <Text textAlign="center" mt={{ sm: 3, md: 3, lg: 5 }} color="gray.200">
                 Fill up the form below to receive our contact
               </Text>
             </Stack>

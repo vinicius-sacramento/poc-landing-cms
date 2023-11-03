@@ -17,8 +17,8 @@ export const Footer = () =>  {
         py={4}
         direction={{ base: 'column', md: 'row' }}
         spacing={4}
-        justify={{ base: 'center', md: 'space-between' }}
-        align={{ base: 'center', md: 'center' }}>
+        justify={'center'}
+        align={'center'}>
         <Text>© 2022 Sacrax IT. All rights reserved</Text>
       </Container>
     </Box>
