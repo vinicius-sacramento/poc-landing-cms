@@ -1,0 +1,1 @@
+export { SectionAnimation } from "./SectionAnimation.component"
