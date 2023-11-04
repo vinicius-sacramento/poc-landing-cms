@@ -4,18 +4,22 @@ import {
   Text,
   Button,
   Stack,
-  Fade,
   Link,
+  // Image,
+  ScaleFade,
 } from '@chakra-ui/react'
+
+// import socialHero from '../../../../assets/svg/social-media.svg'
 import Lottie from 'react-lottie-player'
 import { heroMoney } from '../../../../assets/lottie/contact-us/hero-money'
+
 
 type THeroProps = {
   title?: string,
   subtitle?: string,
   description?: string,
-  callToActionTitle?: string
-  ghostButtonTitle?: string
+  primaryButtonText?: string
+  secondaryButtonText?: string
 }
 
 export const Hero = (props: THeroProps) => {
@@ -23,13 +27,14 @@ export const Hero = (props: THeroProps) => {
     title,
     subtitle,
     description,
-    callToActionTitle,
-    ghostButtonTitle,
+    primaryButtonText,
+    secondaryButtonText,
   } = props;
+
 
   return (
     <>
-      <Fade in={true} transition={{ enter: { duration: 0.8 } }}>
+      <ScaleFade in={true} initialScale={0.5} transition={{ enter: { duration: 0.8 } }}>
         <Stack
           position="relative"
           maxW={'5xl'}
@@ -47,20 +52,18 @@ export const Hero = (props: THeroProps) => {
               fontWeight={600}
               fontSize={{ base: '2xl', sm: '4xl', md: '6xl' }}
               lineHeight={'110%'}>
-              Make money from {title}
+              {title}
               <br />
               <Text
                 as={'span'}
                 bgGradient="linear(to-br, blue.400, red.400)"
                 backgroundClip="text"
               >
-                your audience {subtitle}
+                {subtitle}
               </Text>
             </Heading>
             <Text color={'gray.500'}>
-              Monetize your content by charging your most loyal readers and reward them
-              loyalty points. Give back to your loyal readers by granting them access to
-              your pre-releases and sneak-peaks. {description}
+              {description}
             </Text>
             <Stack
               direction={'column'}
@@ -69,27 +72,38 @@ export const Hero = (props: THeroProps) => {
               alignSelf={'center'}
               position={'relative'}>
               <Link href='#services'>
-
-              <Button
-                colorScheme={'red'}
-                bg={'red.300'}
-                rounded={'2xl'}
-                size={'lg'}
-                border={"none"}
-                px={6}
-                _hover={{
-                  bg: 'red.400',
-                }}>
-                  Get Started {callToActionTitle}
-              </Button>
-                </Link>
-              <Link href='#contact-us' variant={'link'} color="blue.700" colorScheme={'gray'} size={'lg'}>
-                Contact Us {ghostButtonTitle}
+                <Button
+                  colorScheme={'red'}
+                  bg={'red.300'}
+                  rounded={'2xl'}
+                  size={'lg'}
+                  border={"none"}
+                  px={6}
+                  _hover={{
+                    bg: 'red.400',
+                  }}>
+                  {primaryButtonText}
+                </Button>
               </Link>
+              <Link href='#contact-us' variant={'link'} color="blue.700" colorScheme={'gray'} size={'lg'}>
+                {secondaryButtonText}
+              </Link>
+              
             </Stack>
           </Stack>
-          <Box 
-            maxW={{md: 500}}
+          {/* <Box
+            maxW={{ md: 500 }}
+            position={'absolute'}
+            bottom={0}
+            opacity={0.4}
+            zIndex={0}
+          >
+            <Image
+              src={socialHero}
+            />
+          </Box> */}
+          <Box
+            maxW={{ md: 500 }}
             position={'absolute'}
             bottom={0}
             opacity={0.2}
@@ -102,7 +116,7 @@ export const Hero = (props: THeroProps) => {
             />
           </Box>
         </Stack>
-      </Fade>
+      </ScaleFade>
     </>
   )
 }
