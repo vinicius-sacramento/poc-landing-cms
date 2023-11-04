@@ -3,7 +3,7 @@ import { Flex, SlideFade } from "@chakra-ui/react"
 
 export const Services = () => {
   return (
-    <SlideFade in={true} offsetY={250} transition={{ enter: { duration: 0.8 } }}>
+    <SlideFade in={true} offsetY={250} transition={{ enter: { duration: 1.3 } }} >
       <Flex
         id="services"
         alignItems="center"
